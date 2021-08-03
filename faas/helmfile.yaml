@@ -1,0 +1,13 @@
+# https://github.com/openfaas/faas-netes/blob/master/chart/openfaas/README.md
+# https://github.com/openfaas/faas-netes/blob/master/chart/openfaas/values.yaml
+repositories:
+  - name: openfaas
+    url: https://openfaas.github.io/faas-netes/
+releases:
+  - name: openfaas
+    namespace: openfaas
+    chart: openfaas/openfaas
+    version: 8.0.2
+    values:
+      - serviceType: ClusterIP
+        basic_auth: false

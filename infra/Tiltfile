@@ -1,0 +1,15 @@
+# kafka
+# zookeeper
+# schema registry
+# topic with replication
+# replication for offsets
+# topic browser
+# dashboard / alerting rules / servicemonitor
+# apollo server
+# - reload
+# - jwt verify
+# apollo operator
+# minio
+# minio kafka sync
+# jaeger
+# jwt auth
