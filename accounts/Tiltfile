@@ -1,0 +1,13 @@
+
+k8s_yaml('kubernetes.yaml')
+
+k8s_resource('accounts-server', port_forwards=['127.0.0.1:8001:8080'])
+
+docker_build(
+  ref='accounts-server-image',
+  context='.',
+  ignore=[
+    'vendor',
+    'kubernetes.yaml',
+  ],
+)
