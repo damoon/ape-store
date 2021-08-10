@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: apollo-server
+  labels:
+    app: apollo-server
+spec:
+  selector:
+    matchLabels:
+      app: apollo-server
+  template:
+    metadata:
+      labels:
+        app: apollo-server
+    spec:
+      containers:
+      - name: apollo-server
+        image: apollo-server-image
+        ports:
+          - containerPort: 8000
+        readinessProbe:
+          httpGet:
+            path: /
+            port: 8000
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: apollo
+spec:
+  selector:
+    app: apollo-server
+  ports:
+    - protocol: TCP
+      port: 8000
+      targetPort: 8000
