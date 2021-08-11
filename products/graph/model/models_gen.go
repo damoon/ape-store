@@ -5,7 +5,7 @@ package model
 type Product struct {
 	Upc   string `json:"upc"`
 	Name  string `json:"name"`
-	Price int    `json:"price"`
+	Price *int   `json:"price"`
 }
 
 func (Product) IsEntity() {}
