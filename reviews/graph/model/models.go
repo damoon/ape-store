@@ -6,12 +6,6 @@ type Product struct {
 
 func (Product) IsEntity() {}
 
-type Review struct {
-	Body    string
-	Author  *User
-	Product *Product
-}
-
 type User struct {
 	ID       string `json:"id"`
 	Username string `json:"username"`

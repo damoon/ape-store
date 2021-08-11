@@ -22,10 +22,6 @@ func (r *productResolver) Reviews(ctx context.Context, obj *model.Product) ([]*m
 	return res, nil
 }
 
-func (r *userResolver) Username(ctx context.Context, obj *model.User) (string, error) {
-	return obj.Username, nil
-}
-
 func (r *userResolver) Reviews(ctx context.Context, obj *model.User) ([]*model.Review, error) {
 	var res []*model.Review
 
