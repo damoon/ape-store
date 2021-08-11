@@ -1,7 +1,7 @@
 
 k8s_yaml('kubernetes.yaml')
 
-k8s_resource('apollo-server', port_forwards=['127.0.0.1:8000:8000'])
+k8s_resource('apollo-server', port_forwards=['127.0.0.1:8000:4000'])
 
 docker_build(
   ref='apollo-server-image',

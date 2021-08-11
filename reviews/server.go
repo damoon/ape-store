@@ -7,8 +7,8 @@ import (
 
 	"github.com/99designs/gqlgen/graphql/handler"
 	"github.com/99designs/gqlgen/graphql/playground"
-	"github.com/damoon/ape-store/accounts/graph"
-	"github.com/damoon/ape-store/accounts/graph/generated"
+	"github.com/damoon/ape-store/reviews/graph"
+	"github.com/damoon/ape-store/reviews/graph/generated"
 )
 
 const defaultPort = "8080"
