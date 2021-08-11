@@ -6,20 +6,17 @@ package graph
 import (
 	"context"
 
-	"github.com/damoon/ape-store/accounts/graph/generated"
-	"github.com/damoon/ape-store/accounts/graph/model"
+	"github.com/damoon/ape-store/products/graph/generated"
+	"github.com/damoon/ape-store/products/graph/model"
 )
 
-func (r *entityResolver) FindUserByID(ctx context.Context, id string) (*model.User, error) {
-	name := "User " + id
-	if id == "1234" {
-		name = "Me"
+func (r *entityResolver) FindProductByUpc(ctx context.Context, upc string) (*model.Product, error) {
+	for _, h := range hats {
+		if h.Upc == upc {
+			return h, nil
+		}
 	}
-
-	return &model.User{
-		ID:       id,
-		Username: name,
-	}, nil
+	return nil, nil
 }
 
 // Entity returns generated.EntityResolver implementation.

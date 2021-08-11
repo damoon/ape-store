@@ -2,22 +2,9 @@
 
 package model
 
-type Product struct {
-	Upc     string    `json:"upc"`
-	Reviews []*Review `json:"reviews"`
-}
-
-func (Product) IsEntity() {}
-
-type Review struct {
-	Body    *string  `json:"body"`
-	Author  *User    `json:"author"`
-	Product *Product `json:"product"`
-}
-
 type User struct {
-	ID      string    `json:"id"`
-	Reviews []*Review `json:"reviews"`
+	ID       string `json:"id"`
+	Username string `json:"username"`
 }
 
 func (User) IsEntity() {}

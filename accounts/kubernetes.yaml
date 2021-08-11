@@ -5,6 +5,8 @@ metadata:
   labels:
     app: accounts-server
 spec:
+  strategy:
+    type: Recreate
   selector:
     matchLabels:
       app: accounts-server

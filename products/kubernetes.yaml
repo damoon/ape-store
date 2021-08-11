@@ -1,38 +1,38 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: apollo-server
+  name: products-server
   labels:
-    app: apollo-server
+    app: products-server
 spec:
   strategy:
     type: Recreate
   selector:
     matchLabels:
-      app: apollo-server
+      app: products-server
   template:
     metadata:
       labels:
-        app: apollo-server
+        app: products-server
     spec:
       containers:
-      - name: apollo-server
-        image: apollo-server-image
+      - name: products-server
+        image: products-server-image
         ports:
-          - containerPort: 8000
+          - containerPort: 8080
         readinessProbe:
           httpGet:
             path: /
-            port: 8000
+            port: 8080
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: apollo
+  name: products
 spec:
   selector:
-    app: apollo-server
+    app: products-server
   ports:
     - protocol: TCP
-      port: 8000
-      targetPort: 8000
+      port: 8080
+      targetPort: 8080

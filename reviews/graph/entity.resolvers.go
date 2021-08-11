@@ -6,19 +6,19 @@ package graph
 import (
 	"context"
 
-	"github.com/damoon/ape-store/accounts/graph/generated"
-	"github.com/damoon/ape-store/accounts/graph/model"
+	"github.com/damoon/ape-store/reviews/graph/generated"
+	"github.com/damoon/ape-store/reviews/graph/model"
 )
 
-func (r *entityResolver) FindUserByID(ctx context.Context, id string) (*model.User, error) {
-	name := "User " + id
-	if id == "1234" {
-		name = "Me"
-	}
+func (r *entityResolver) FindProductByUpc(ctx context.Context, upc string) (*model.Product, error) {
+	return &model.Product{
+		Upc: upc,
+	}, nil
+}
 
+func (r *entityResolver) FindUserByID(ctx context.Context, id string) (*model.User, error) {
 	return &model.User{
-		ID:       id,
-		Username: name,
+		ID: id,
 	}, nil
 }
 
